@@ -1,4 +1,5 @@
-*.properties
+$ cat .gitignore
+private.properties
 
 *.class
 
