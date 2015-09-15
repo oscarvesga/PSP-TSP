@@ -1,10 +1,27 @@
 package kernel;
 
+/**
+ *
+ * Calculadora de Datos
+ *
+ * @author Oscar Vesga
+ * @version 1.0
+ * @since 01-09-2015
+ *
+ */
 public class Calculadora {
 
+    /**
+     * Constructor
+     */
     public Calculadora() {
     }
-
+    
+    /**
+     * retorna la sumatoria de todos los valores X
+     * @param data lista de datos (x, y)
+     * @return sum(X)
+     */
     private float getX(Head data)
     {
         float result =0;
@@ -18,6 +35,11 @@ public class Calculadora {
         return result;
     }
     
+    /**
+     * Retorna la sumatoria de todos los valores Y
+     * @param data lista de datos x, y
+     * @return sum(Y)
+     */
     private float getY(Head data)
     {
         float result =0;
@@ -69,6 +91,11 @@ public class Calculadora {
         return result/size;
     }
 
+    /**
+     * retorna la sumatoria de todos los valos X elevados al cuadrado
+     * @param data lista de datos (x, y)
+     * @return sum(X*X)
+     */
     public float getX2(Head data) {
         float result = 0;
         
@@ -81,6 +108,11 @@ public class Calculadora {
         return result;
     }
 
+    /**
+     * Retorna la sumatoria de todos los X multiplicados por Y
+     * @param data lista de datos (x, y)
+     * @return sum(X*Y)
+     */
     public float getXY(Head data) {
         float result = 0;
         
@@ -93,6 +125,11 @@ public class Calculadora {
         return result;
     }
 
+    /**
+     * Retorna la sumatoria de todos los Y elevados al cuadrado
+     * @param data lista de datos (x, y)
+     * @return sum(Y*Y)
+     */
     public float getY2(Head data) {
         float result = 0;
         
@@ -105,6 +142,11 @@ public class Calculadora {
         return result;
     }
 
+    /**
+     * Calcula el parametro B0 de una regresion lineal
+     * @param data lista de datos (x, y)
+     * @return B0
+     */
     public float calcularB0(Head data) {
         float result = 0;
         
@@ -117,6 +159,11 @@ public class Calculadora {
         return result;
     }
 
+    /**
+     * Calcula el factor B1 de una regresion lineal
+     * @param data lista de datos (x, y)
+     * @return B1
+     */
     public float calcularB1(Head data) {
         float result = 0;
         int n = data.size();
@@ -131,6 +178,11 @@ public class Calculadora {
         return result;
     }
 
+    /**
+     * Calcula el factor de correlación R de un grupo de datos
+     * @param data lista de datos (x, y)
+     * @return R
+     */
     public double calcularR(Head data) {
         
         int n = data.size();
@@ -147,11 +199,22 @@ public class Calculadora {
         return result1/result2;
     }
 
+    /**
+     * Calcula el indice de correlación al cuadrado de una lista de datos
+     * @param data lista de datos (x, y)
+     * @return R*R
+     */
     public double calcularR2(Head data) {
         double r = calcularR(data);
         return r*r;
     }
 
+    /**
+     * Calcula la Proyección de un programa segun una lista de datos
+     * @param data - lista de datos (x, y)
+     * @param proxyE - Tamaño aproximado del Programa
+     * @return P
+     */
     public float calcularP(Head data, float proxyE) {
         
         float B0 = calcularB0(data);

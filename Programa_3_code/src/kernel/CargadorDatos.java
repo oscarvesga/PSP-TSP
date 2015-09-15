@@ -7,13 +7,29 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * Cargador de datos en archivos .txt
+ *
+ * @author Oscar Vesga
+ * @version 1.0
+ * @since 01-09-2015
+ *
+ */
 public class CargadorDatos {
 
     private Head data;
 
+    /**
+     * Constructor
+     */
     public CargadorDatos() {
     }
 
+    /**
+     * Carga los datos en la lista data 
+     * @param file - path del archivo
+     */
     public void cargarDatos(String file) {
         Head data1 = new Head();
 
@@ -53,6 +69,10 @@ public class CargadorDatos {
         }
     }
 
+    /**
+     * retorna la lista de datos
+     * @return lista datos (x, y)
+     */
     public Head getData() {
         return this.data;
     }

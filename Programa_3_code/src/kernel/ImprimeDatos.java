@@ -2,13 +2,30 @@ package kernel;
 
 import java.io.File;
 
+/**
+ *
+ * Imprime datos
+ *
+ * @author Oscar Vesga
+ * @version 1.0
+ * @since 01-09-2015
+ *
+ */
 public class ImprimeDatos
 {
 
+    /**
+     * Constructor
+     */
     public ImprimeDatos()
     {
     }
 
+    /**
+     * Imprime los datos solicitados por el programa
+     * @param data
+     * @param test
+     */
     public void imprimirDatos(Head data, String test)
     {
         Calculadora calculadora = new Calculadora();
@@ -28,6 +45,10 @@ public class ImprimeDatos
         System.out.println("P = " + P);        
     }
 
+    /**
+     * Ininica la aplicación
+     * @param args
+     */
     public static void main(String[] args)
     {
         ImprimeDatos impr = new ImprimeDatos();
