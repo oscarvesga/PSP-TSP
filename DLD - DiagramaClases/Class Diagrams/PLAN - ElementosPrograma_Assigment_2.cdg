@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PLAN - ElementosPrograma">
+  <ClassDiagramComponents>
+    <Class name="ContadorLOC" package="" visibility="public" xPosition="36.0" yPosition="64.0">
+      <Fields>
+        <Field name="directorio" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="directorio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="contar" returnType="int" visibility="public">
+          <Argument type="File" name="archivo"/>
+          <Argument type="String" name="inicio"/>
+          <Argument type="String" name="fin"/>
+        </Method>
+        <Method name="contarClases" returnType="int" visibility="public"/>
+        <Method name="contarMetodos" returnType="int" visibility="public"/>
+        <Method name="contarLOC" returnType="int" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cargador" package="" visibility="public" xPosition="357.0" yPosition="64.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarProyecto" returnType="File[]" visibility="public">
+          <Argument type="String" name="directorio"/>
+        </Method>
+        <Method name="readLine" returnType="String" visibility="public">
+          <Argument type="File" name="archivo"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

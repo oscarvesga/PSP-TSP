@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DLD - DiagramaClases">
+  <ClassDiagramComponents>
+    <Class name="Calculadora" package="" visibility="public" xPosition="18.0" yPosition="66.0">
+      <Fields>
+        <Field name="cargador" type="CargadorDatos" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularMedia" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="calcularDesvEstandar" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CargadorDatos" package="" visibility="public" xPosition="383.0" yPosition="66.0">
+      <Fields>
+        <Field name="file" type="String" visibility="private"/>
+        <Field name="data" type="Head" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cargarDatos" returnType="void" visibility="public">
+          <Argument type="String" name="file"/>
+        </Method>
+        <Method name="getData" returnType="Head" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Head" package="" visibility="public" xPosition="396.0" yPosition="273.0">
+      <Fields>
+        <Field name="first" type="Node" visibility="private"/>
+        <Field name="last" type="Node" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Head" returnType="void" visibility="public"/>
+        <Method name="setFirst" returnType="void" visibility="public">
+          <Argument type="Node" name="first"/>
+        </Method>
+        <Method name="setLast" returnType="void" visibility="public">
+          <Argument type="Node" name="last"/>
+        </Method>
+        <Method name="getFirst" returnType="Node" visibility="public"/>
+        <Method name="getLast" returnType="Node" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Node" package="" visibility="public" xPosition="60.0" yPosition="292.0">
+      <Fields>
+        <Field name="num" type="float" visibility="private"/>
+        <Field name="next" type="Node" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Node" returnType="void" visibility="public"/>
+        <Method name="setNum" returnType="void" visibility="public">
+          <Argument type="float" name="num"/>
+        </Method>
+        <Method name="getNum" returnType="float" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cargador" source="Calculadora" target="CargadorDatos" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="last" source="Head" target="Node" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="CargadorDatos" target="Head" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="fist" source="Head" target="Node" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
