@@ -23,6 +23,7 @@ public class ImprimeDatos
 
     /**
      * Imprime los datos solicitados por el programa
+     *
      * @param data
      * @param test
      */
@@ -35,25 +36,26 @@ public class ImprimeDatos
         double r = calculadora.calcularR(data);
         double r2 = calculadora.calcularR2(data);
 
-        System.out.println("---------"+test+"----------");
+        System.out.println("---------" + test + "----------");
         System.out.println("B0 = " + B0);
         System.out.println("B1 = " + B1);
         System.out.println("r = " + r);
         System.out.println("r2 = " + r2);
 
         float P = calculadora.calcularP(data, proxyE);
-        System.out.println("P = " + P);        
+        System.out.println("P = " + P);
     }
 
     /**
      * Ininica la aplicación
+     *
      * @param args
      */
     public static void main(String[] args)
     {
         ImprimeDatos impr = new ImprimeDatos();
         CargadorDatos cargador = new CargadorDatos();
-        
+
         File directorio = new File("data");
         File[] archivos = directorio.listFiles();
         for (File archivo : archivos) {
@@ -61,7 +63,7 @@ public class ImprimeDatos
             Head data = cargador.getData();
             impr.imprimirDatos(data, archivo.getName());
         }
-        
+
     }
 
 }

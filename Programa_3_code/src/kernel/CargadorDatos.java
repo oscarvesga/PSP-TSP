@@ -16,21 +16,25 @@ import java.util.logging.Logger;
  * @since 01-09-2015
  *
  */
-public class CargadorDatos {
+public class CargadorDatos
+{
 
     private Head data;
 
     /**
      * Constructor
      */
-    public CargadorDatos() {
+    public CargadorDatos()
+    {
     }
 
     /**
-     * Carga los datos en la lista data 
+     * Carga los datos en la lista data
+     *
      * @param file - path del archivo
      */
-    public void cargarDatos(String file) {
+    public void cargarDatos(String file)
+    {
         Head data1 = new Head();
 
         FileReader fr = null;
@@ -41,12 +45,12 @@ public class CargadorDatos {
             String linea = br.readLine();
             while ((linea = br.readLine()) != null) {
 //                System.out.println("linea = "+linea);
-                
-                String[] numeros = linea.split(";");                
+
+                String[] numeros = linea.split(";");
                 float x = Float.parseFloat(numeros[0]);
                 float y = Float.parseFloat(numeros[1]);
-                
-                Node num = new Node(x,y);
+
+                Node num = new Node(x, y);
                 Node last = data1.getLast();
                 if (last == null) {
                     data1.setFirst(num);
@@ -71,9 +75,11 @@ public class CargadorDatos {
 
     /**
      * retorna la lista de datos
+     *
      * @return lista datos (x, y)
      */
-    public Head getData() {
+    public Head getData()
+    {
         return this.data;
     }
 }

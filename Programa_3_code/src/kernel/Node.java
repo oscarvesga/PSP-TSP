@@ -9,7 +9,8 @@ package kernel;
  * @since 01-09-2015
  *
  */
-public class Node {
+public class Node
+{
 
     private float x;
 
@@ -19,10 +20,12 @@ public class Node {
 
     /**
      * Constructor
-     * @param x 
+     *
+     * @param x
      * @param y
      */
-    public Node(float x, float y) {
+    public Node(float x, float y)
+    {
         this.x = x;
         this.y = y;
         this.next = null;
@@ -30,57 +33,71 @@ public class Node {
 
     /**
      * Retorna el valor X del nodo
+     *
      * @return X
      */
-    public float getX() {
+    public float getX()
+    {
         return this.x;
     }
 
     /**
      * Retorna el valor Y del nodo
+     *
      * @return Y
      */
-    public float getY() {
+    public float getY()
+    {
         return this.y;
     }
 
     /**
      * Retorna el valor X elevado al cuadrado
+     *
      * @return X*X
      */
-    public float getX2() {
+    public float getX2()
+    {
         return this.x * this.x;
     }
 
     /**
      * Retorna el valor X multiplicado por Y
+     *
      * @return X*Y
      */
-    public float getXY() {
+    public float getXY()
+    {
         return this.x * this.y;
     }
 
     /**
      * Retorna el valor Y elevado al cuadrado
+     *
      * @return Y*Y
      */
-    public float getY2() {
+    public float getY2()
+    {
         return this.y * this.y;
     }
 
     /**
      * Retorna el nodo siguiente
+     *
      * @return Node
      */
-    public Node getNext() {
+    public Node getNext()
+    {
         return this.next;
     }
 
     /**
-     * Cambia el nodo siguiente 
+     * Cambia el nodo siguiente
+     *
      * @param next
      */
-    public void setNext(Node next) {
+    public void setNext(Node next)
+    {
         this.next = next;
     }
 }
