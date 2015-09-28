@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Programa_3">
+  <ClassDiagramComponents>
+    <Class name="CargadorDatos" package="" visibility="public" xPosition="55.0" yPosition="381.0">
+      <Fields>
+        <Field name="data" type="Head" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDatos" returnType="void" visibility="public">
+          <Argument type="String" name="file"/>
+        </Method>
+        <Method name="getData" returnType="Head" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Head" package="" visibility="public" xPosition="323.0" yPosition="333.0">
+      <Fields>
+        <Field name="first" type="Node" visibility="private"/>
+        <Field name="last" type="Node" visibility="private"/>
+        <Field name="length" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getFirst" returnType="Node" visibility="public"/>
+        <Method name="getLast" returnType="Node" visibility="public"/>
+        <Method name="setFirst" returnType="Node" visibility="public">
+          <Argument type="Node" name="first"/>
+        </Method>
+        <Method name="setLast" returnType="Node" visibility="public">
+          <Argument type="Node" name="last"/>
+        </Method>
+        <Method name="size" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Node" package="" visibility="public" xPosition="588.0" yPosition="314.0">
+      <Fields>
+        <Field name="x" type="float" visibility="private"/>
+        <Field name="y" type="float" visibility="private"/>
+        <Field name="next" type="Node" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getX" returnType="float" visibility="public"/>
+        <Method name="getY" returnType="float" visibility="public"/>
+        <Method name="getX2" returnType="float" visibility="public"/>
+        <Method name="getXY" returnType="float" visibility="public"/>
+        <Method name="getY2" returnType="float" visibility="public"/>
+        <Method name="getNext" returnType="Node" visibility="public"/>
+        <Method name="setNext" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Calculadora" package="" visibility="public" xPosition="404.0" yPosition="6.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getXavg" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="getYavg" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="getX2" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="getXY" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="getY2" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="calcularB0" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="calcularB1" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="calcularR" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="calcularR2" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+        </Method>
+        <Method name="calcularP" returnType="float" visibility="public">
+          <Argument type="Head" name="data"/>
+          <Argument type="float" name="proxyE"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImprimeDatos" package="" visibility="public" xPosition="73.0" yPosition="101.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="data" source="CargadorDatos" target="Head" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="first" source="Head" target="Node" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="calculadora" source="ImprimeDatos" target="Calculadora" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="last" source="Head" target="Node" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="cargador" source="ImprimeDatos" target="CargadorDatos" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
