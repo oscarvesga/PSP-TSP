@@ -160,8 +160,9 @@ public class ContadorLOC
     public static void main(String[] args)
     {
 //        ContadorLOC contador = new ContadorLOC("../Programa_1_code/src");
-        //ContadorLOC contador = new ContadorLOC("../Programa_2_code/src");
-        ContadorLOC contador = new ContadorLOC("../Programa_3_code/src");
+//        ContadorLOC contador = new ContadorLOC("../Programa_2_code/src");
+//        ContadorLOC contador = new ContadorLOC("../Programa_3_code/src");
+        ContadorLOC contador = new ContadorLOC("../Programa_4_code/src");
         
         for(File archivo: contador.getArchivos()){
             contador.contarMetodos(archivo);
