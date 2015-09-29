@@ -39,7 +39,7 @@ public class Cargador
         if (directorio1.isDirectory()) {
             File listado[] = directorio1.listFiles();
             for (int i = 0; i < listado.length; i++) {
-                System.out.println(listado[i].getName());
+//                System.out.println(listado[i].getName());
                 cargarProyecto(listado[i].getAbsolutePath());
             }
         } else if (directorio1.toString().endsWith(".java")) {
