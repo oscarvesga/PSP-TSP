@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DLD - Programa_5">
+  <ClassDiagramComponents>
+    <Class name="CargadorDatos" package="" visibility="public" xPosition="61.0" yPosition="324.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDatos" returnType="void" visibility="public">
+          <Argument type="String" name="file"/>
+        </Method>
+        <Method name="getData" returnType="ArrayList" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Calculadora" package="" visibility="public" xPosition="452.0" yPosition="102.0">
+      <Fields>
+        <Field name="num_seg" type="int" visibility="private"/>
+        <Field name="error" type="double" visibility="private"/>
+        <Field name="with" type="float" visibility="private"/>
+        <Field name="dof" type="int" visibility="private"/>
+        <Field name="x" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="float" name="x"/>
+          <Argument type="int" name="dof"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="funcionGamma" returnType="double" visibility="public">
+          <Argument type="float" name="xi"/>
+        </Method>
+        <Method name="funcionP" returnType="double" visibility="public">
+          <Argument type="int" name="num_seg"/>
+        </Method>
+        <Method name="calcularP" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ImprimeDatos" package="" visibility="public" xPosition="32.0" yPosition="102.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="imprimirDatos" returnType="void" visibility="public">
+          <Argument type="ArrayList" name="data"/>
+          <Argument type="String" name="test"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
