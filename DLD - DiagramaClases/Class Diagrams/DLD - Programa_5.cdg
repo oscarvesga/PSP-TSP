@@ -3,12 +3,14 @@
 <ClassDiagram name="DLD - Programa_5">
   <ClassDiagramComponents>
     <Class name="CargadorDatos" package="" visibility="public" xPosition="61.0" yPosition="324.0">
-      <Fields/>
+      <Fields>
+        <Field name="data" type="ArrayList" visibility="private"/>
+      </Fields>
       <Constructors>
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="cargarDatos" returnType="void" visibility="public">
+        <Method name="cargarDatos" returnType="ArrayList" visibility="public">
           <Argument type="String" name="file"/>
         </Method>
         <Method name="getData" returnType="ArrayList" visibility="public"/>
@@ -35,7 +37,9 @@
         <Method name="funcionP" returnType="double" visibility="public">
           <Argument type="int" name="num_seg"/>
         </Method>
-        <Method name="calcularP" returnType="double" visibility="public"/>
+        <Method name="calcularP" returnType="double" visibility="public">
+          <Argument type="ArrayList" name="data"/>
+        </Method>
       </Methods>
     </Class>
     <Class name="ImprimeDatos" package="" visibility="public" xPosition="32.0" yPosition="102.0">
