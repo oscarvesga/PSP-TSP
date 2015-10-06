@@ -2,7 +2,7 @@
 
 <ClassDiagram name="DLD - Programa_5">
   <ClassDiagramComponents>
-    <Class name="CargadorDatos" package="" visibility="public" xPosition="61.0" yPosition="324.0">
+    <Class name="CargadorDatos" package="" visibility="public" xPosition="79.0" yPosition="429.0">
       <Fields>
         <Field name="data" type="ArrayList" visibility="private"/>
       </Fields>
@@ -10,19 +10,55 @@
         <Constructor visibility="public"/>
       </Constructors>
       <Methods>
-        <Method name="cargarDatos" returnType="ArrayList" visibility="public">
+        <Method name="cargarDatos" returnType="String" visibility="public">
           <Argument type="String" name="file"/>
         </Method>
         <Method name="getData" returnType="ArrayList" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Calculadora" package="" visibility="public" xPosition="452.0" yPosition="102.0">
+    <Class name="Calculadora" package="" visibility="public" xPosition="448.0" yPosition="93.0">
       <Fields>
         <Field name="num_seg" type="int" visibility="private"/>
         <Field name="error" type="double" visibility="private"/>
         <Field name="with" type="float" visibility="private"/>
-        <Field name="dof" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="funcionGamma" returnType="float" visibility="public">
+          <Argument type="float" name="xi"/>
+        </Method>
+        <Method name="funcionF" returnType="double" visibility="public">
+          <Argument type="float" name="xi"/>
+          <Argument type="int" name="dof"/>
+        </Method>
+        <Method name="funcionP" returnType="double" visibility="public">
+          <Argument type="float" name="x"/>
+          <Argument type="int" name="dof"/>
+          <Argument type="int" name="num_seg"/>
+        </Method>
+        <Method name="calcularP" returnType="ArrayList" visibility="public">
+          <Argument type="ArrayList" name="data"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ImprimeDatos" package="" visibility="public" xPosition="32.0" yPosition="169.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="imprimirDatos" returnType="String" visibility="public">
+          <Argument type="ArrayList" name="data"/>
+          <Argument type="String" name="test"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Node" package="" visibility="public" xPosition="399.0" yPosition="419.0">
+      <Fields>
         <Field name="x" type="float" visibility="private"/>
+        <Field name="dof" type="int" visibility="private"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
@@ -31,29 +67,14 @@
         </Constructor>
       </Constructors>
       <Methods>
-        <Method name="funcionGamma" returnType="double" visibility="public">
-          <Argument type="float" name="xi"/>
-        </Method>
-        <Method name="funcionP" returnType="double" visibility="public">
-          <Argument type="int" name="num_seg"/>
-        </Method>
-        <Method name="calcularP" returnType="double" visibility="public">
-          <Argument type="ArrayList" name="data"/>
-        </Method>
-      </Methods>
-    </Class>
-    <Class name="ImprimeDatos" package="" visibility="public" xPosition="32.0" yPosition="102.0">
-      <Fields/>
-      <Constructors>
-        <Constructor visibility="public"/>
-      </Constructors>
-      <Methods>
-        <Method name="imprimirDatos" returnType="void" visibility="public">
-          <Argument type="ArrayList" name="data"/>
-          <Argument type="String" name="test"/>
-        </Method>
+        <Method name="getX" returnType="float" visibility="public"/>
+        <Method name="getDof" returnType="int" visibility="public"/>
       </Methods>
     </Class>
   </ClassDiagramComponents>
-  <ClassDiagramRelations/>
+  <ClassDiagramRelations>
+    <HasRelation name="calc" source="ImprimeDatos" target="Calculadora" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="CargadorDatos" target="Node" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="cargador" source="ImprimeDatos" target="CargadorDatos" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
 </ClassDiagram>
