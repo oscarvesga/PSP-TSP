@@ -72,7 +72,7 @@ public class Calculadora
             double p2 = funcionP(node.getX(), node.getDof(), 2 * this.num_seg);
 
             int j = 2 * this.num_seg;
-            while (p1 - p2 > this.error) {
+            while (p1 - p2 >= this.error) {
                 p1 = funcionP(node.getX(), node.getDof(), j);
                 p2 = funcionP(node.getX(), node.getDof(), j * 2);
                 j = j * 2;
