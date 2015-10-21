@@ -8,19 +8,36 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * Cargador de datos
+ *
+ * @author Oscar Vesga
+ * @version 1.0
+ * @since 20-10-2015
+ *
+ */
 public class CargadorDatos
 {
 
     private ArrayList data;
 
+    /**
+     * Constructor
+     */
     public CargadorDatos()
     {
     }
 
+    /**
+     * Carga los datos en la lista data
+     *
+     * @param file - path del archivo
+     */
     public String cargarDatos(String file)
     {
         ArrayList data1 = new ArrayList();
-        
+
         FileReader fr = null;
         try {
             File archivo = new File(file);
@@ -35,7 +52,7 @@ public class CargadorDatos
                 int dof = Integer.parseInt(numeros[1]);
 
                 Node node = new Node(x, dof);
-                data1.add(node);                
+                data1.add(node);
             }
 
             this.data = data1;
@@ -52,6 +69,11 @@ public class CargadorDatos
         return "";
     }
 
+    /**
+     * retorna la lista de datos
+     *
+     * @return lista datos (x, y)
+     */
     public ArrayList getData()
     {
         return this.data;

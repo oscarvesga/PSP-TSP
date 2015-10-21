@@ -9,7 +9,7 @@ import java.util.ArrayList;
  *
  * @author Oscar Vesga
  * @version 1.0
- * @since 29-09-2015
+ * @since 20-10-2015
  *
  */
 public class ImprimeDatos
@@ -31,7 +31,7 @@ public class ImprimeDatos
     public void imprimirDatos(ArrayList data, String test)
     {
         Calculadora calculadora = new Calculadora();
-        
+
         ArrayList result = calculadora.calcularP(data);
         System.out.println("---------" + test + "----------");
         for (int i = 0; i < result.size(); i++) {
@@ -39,7 +39,7 @@ public class ImprimeDatos
             Node node = (Node) data.get(i);
             float x = node.getX();
             int dof = node.getDof();
-            System.out.println("P("+x+","+dof+") = "+p);
+            System.out.println("P(" + x + "," + dof + ") = " + p);
         }
     }
 
@@ -55,16 +55,18 @@ public class ImprimeDatos
 
         File directorio = new File("data");
         File[] archivos = directorio.listFiles();
-        for (File archivo : archivos) {
-            String result = cargador.cargarDatos(archivo.getPath());
-            if (result.equals("OK")){
-                ArrayList data = cargador.getData();
-                impr.imprimirDatos(data, archivo.getName());
+        if (archivos.length > 0) {
+            for (File archivo : archivos) {
+                String result = cargador.cargarDatos(archivo.getPath());
+                if (result.equals("OK")) {
+                    ArrayList data = cargador.getData();
+                    impr.imprimirDatos(data, archivo.getName());
+                } else {
+                    System.out.println("No se encontro el archivo en el directorio /data");
+                }
             }
-            else {
-                System.out.println("No se encontro el archivo en el directorio /data");
-            }
-            
+        } else {
+            System.out.println("No se encontro el archivo en el directorio /data");
         }
 
     }
