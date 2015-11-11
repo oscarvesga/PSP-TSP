@@ -17,13 +17,21 @@ public class Calculadora
     private final int num_seg;
 
     private final double error;
-
+    
+    /**
+     * Constructor
+     */
     public Calculadora()
     {
         this.num_seg = 10;
         this.error = 0.0000001;
     }
-
+    
+    /**
+     * Calcula el coeficiente Gamma
+     * @param xi 
+     * @return el coeficiente Gamma
+     */
     public double funcionGamma(float xi)
     {
         if (xi == 1) {
@@ -35,6 +43,12 @@ public class Calculadora
         }
     }
 
+    /**
+     * Calcula la funcion F 
+     * @param xi segmento a caluclar
+     * @param dof grados de libertad 
+     * @return 
+     */
     public double funcionF(double xi, int dof)
     {
         double result1 = funcionGamma((dof + 1) / 2f);
@@ -45,6 +59,13 @@ public class Calculadora
         return result1 * result2;
     }
 
+    /**
+     * Calcula la funcion P 
+     * @param x 
+     * @param dof grados de libertad
+     * @param num_seg numero de segmentos de la función
+     * @return 
+     */
     public double funcionP(double x, int dof, int num_seg)
     {
         double result = 0;
@@ -62,6 +83,11 @@ public class Calculadora
         return suma * w / 3;
     }
 
+    /**
+     * Calcula el valor P teniendo en cuenta el error E
+     * @param data datos para calcular el valor P
+     * @return reorna una lista de valores P asociados a la lista de datos data
+     */
     public ArrayList calcularP(ArrayList data)
     {
         ArrayList result = new ArrayList();
