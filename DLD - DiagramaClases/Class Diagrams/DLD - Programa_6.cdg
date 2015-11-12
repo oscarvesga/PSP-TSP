@@ -38,7 +38,7 @@
           <Argument type="int" name="dof"/>
           <Argument type="int" name="num_seg"/>
         </Method>
-        <Method name="calcularP" returnType="ArrayList" visibility="public">
+        <Method name="calcularT" returnType="ArrayList" visibility="public">
           <Argument type="ArrayList" name="data"/>
         </Method>
       </Methods>
@@ -74,8 +74,8 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
+    <HasRelation name="calc" source="ImprimeDatos" target="Calculadora" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="data" source="CargadorDatos" target="Node" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
     <HasRelation name="cargador" source="ImprimeDatos" target="CargadorDatos" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="calc" source="ImprimeDatos" target="Calculadora" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
