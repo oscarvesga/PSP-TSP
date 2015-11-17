@@ -17,7 +17,7 @@ public class Calculadora
     private final int num_seg;
 
     private final double error;
-    
+
     /**
      * Constructor
      */
@@ -26,10 +26,11 @@ public class Calculadora
         this.num_seg = 10;
         this.error = 0.0000001;
     }
-    
+
     /**
      * Calcula el coeficiente Gamma
-     * @param xi 
+     *
+     * @param xi
      * @return el coeficiente Gamma
      */
     public double funcionGamma(float xi)
@@ -44,10 +45,11 @@ public class Calculadora
     }
 
     /**
-     * Calcula la funcion F 
+     * Calcula la funcion F
+     *
      * @param xi segmento a caluclar
-     * @param dof grados de libertad 
-     * @return 
+     * @param dof grados de libertad
+     * @return
      */
     public double funcionF(double xi, int dof)
     {
@@ -60,11 +62,12 @@ public class Calculadora
     }
 
     /**
-     * Calcula la funcion P 
-     * @param x 
+     * Calcula la funcion P
+     *
+     * @param x
      * @param dof grados de libertad
      * @param num_seg numero de segmentos de la función
-     * @return 
+     * @return
      */
     public double funcionP(double x, int dof, int num_seg)
     {
@@ -85,6 +88,7 @@ public class Calculadora
 
     /**
      * Calcula el valor T teniendo en cuenta el error E
+     *
      * @param data datos para calcular el valor T
      * @return retorna una lista de valores T asociados a la lista de datos data
      */
@@ -94,17 +98,30 @@ public class Calculadora
 
         for (int i = 0; i < data.size(); i++) {
             Node node = (Node) data.get(i);
-            double p1 = funcionP(node.getX(), node.getDof(), this.num_seg);
-            double p2 = funcionP(node.getX(), node.getDof(), 2 * this.num_seg);
+            double t = 1.0d;
+            double d = 0.5d;
 
-            int j = 2 * this.num_seg;
-            while (p1 - p2 >= this.error) {
-                p1 = funcionP(node.getX(), node.getDof(), j);
-                p2 = funcionP(node.getX(), node.getDof(), j * 2);
-                j = j * 2;
-            }
+            double p1 = 0.0d;
+            double p2 = 0.5d;
+            double err = 0.0d;
+            do {
+                p1 = node.getX();
+                p2 = funcionP(t, node.getDof(), this.num_seg);
+                if (p1 - p2 > 0) {
+                    t = t + d;                    
+                } else {
+                    d = d / 2;
+                    t = t - d;                    
+                }
 
-            double rest = p2;
+                p2 = funcionP(t, node.getDof(), this.num_seg);                                
+                err = p1 - p2;
+                if (err < 0) {
+                    err = err * -1;
+                }
+            } while (err >= this.error);
+
+            double rest = t;
             result.add(rest);
         }
 

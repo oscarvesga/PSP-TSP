@@ -35,11 +35,11 @@ public class ImprimeDatos
         ArrayList result = calculadora.calcularT(data);
         System.out.println("---------" + test + "----------");
         for (int i = 0; i < result.size(); i++) {
-            double p = (double) result.get(i);
+            double t = (double) result.get(i);
             Node node = (Node) data.get(i);
-            float x = node.getX();
+            double x = node.getX();
             int dof = node.getDof();
-            System.out.println("P(" + x + "," + dof + ") = " + p);
+            System.out.println("T(" + x + "," + dof + ") = " + t);
         }
     }
 

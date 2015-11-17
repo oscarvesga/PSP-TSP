@@ -12,7 +12,7 @@ package kernel;
 public class Node
 {
 
-    private float x;
+    private double x;
 
     private int dof;
 
@@ -22,7 +22,7 @@ public class Node
      * @param x
      * @param dof
      */
-    public Node(float x, int dof)
+    public Node(double x, int dof)
     {
         this.x = x;
         this.dof = dof;
@@ -33,7 +33,7 @@ public class Node
      *
      * @return X
      */
-    public float getX()
+    public double getX()
     {
         return this.x;
     }

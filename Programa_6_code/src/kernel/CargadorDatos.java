@@ -48,7 +48,7 @@ public class CargadorDatos
 //                System.out.println("linea = "+linea);
 
                 String[] numeros = linea.split(";");
-                float x = Float.parseFloat(numeros[0]);
+                double x = Double.parseDouble(numeros[0]);
                 int dof = Integer.parseInt(numeros[1]);
 
                 Node node = new Node(x, dof);
