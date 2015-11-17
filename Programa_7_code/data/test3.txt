@@ -1,0 +1,6 @@
+Estimate Proxy Size;Actual Add y Mod
+161.13;93
+316.2;133
+211.62;98
+182.12;66
+27;23
