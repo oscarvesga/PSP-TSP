@@ -108,12 +108,15 @@
         </Method>
         <Method name="calcularRange" returnType="double" visibility="public">
           <Argument type="Head" name="data"/>
+          <Argument type="float" name="proxyE"/>
         </Method>
         <Method name="calcularUPI" returnType="double" visibility="public">
           <Argument type="Head" name="data"/>
+          <Argument type="float" name="proxyE"/>
         </Method>
         <Method name="calcularLPI" returnType="double" visibility="public">
           <Argument type="Head" name="data"/>
+          <Argument type="float" name="proxyE"/>
         </Method>
         <Method name="funcionGamma" returnType="float" visibility="public">
           <Argument type="float" name="xi"/>
@@ -152,10 +155,10 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="cargador" source="ImprimeDatos" target="CargadorDatos" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="data" source="CargadorDatos" target="Head" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="calculadora" source="ImprimeDatos" target="Calculadora" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="last" source="Head" target="Node" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
     <HasRelation name="first" source="Head" target="Node" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="last" source="Head" target="Node" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="cargador" source="ImprimeDatos" target="CargadorDatos" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="calculadora" source="ImprimeDatos" target="Calculadora" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="CargadorDatos" target="Head" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
